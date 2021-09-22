@@ -1,0 +1,4 @@
+.chatboxContainer {
+    height: 40rem;
+    overflow-y: scroll;
+}
