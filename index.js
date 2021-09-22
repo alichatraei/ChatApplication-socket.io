@@ -8,6 +8,8 @@ const cors = require("cors");
 const { addUser, removeUser, getUser, getUserInRoom } = require("./Users");
 const server = http.createServer(app);
 const io = new Server(server);
+app.use(router);
+app.use(cors());
 io.on("connection", (socket) => {
   socket.on("join", ({ name, room }, callback) => {
     socket.emit("message", {
@@ -33,8 +35,6 @@ io.on("connection", (socket) => {
     });
   });
 });
-app.use(router);
-app.use(cors());
 server.listen(PORT, () => {
   console.log(`server started on port ${PORT}`);
 });
