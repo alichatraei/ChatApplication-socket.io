@@ -1,5 +1,5 @@
 import React from "react";
-import emoji from "react-emoji";
+import ReactEmoji from "react-emoji";
 import "./Messages.css";
 const Message = ({ name, message: { user, text } }) => {
   let isISentMessage = false;
@@ -12,14 +12,14 @@ const Message = ({ name, message: { user, text } }) => {
           <div className="messageAuthor w-100 h-100">
             <p className="w-100">{user}</p>
           </div>
-          <div className="messageText">{emoji.ReactEmoji(text)}</div>
+          <div className="messageText">{ReactEmoji.emojify(text)}</div>
         </div>
       ) : (
         <div className="myMessage h-100">
           <div className="messageAuthor w-100 h-100">
             <p className="w-100">{user}</p>
           </div>
-          <div className="messageText">{emoji.ReactEmoji(text)}</div>
+          <div className="messageText">{ReactEmoji.emojify(text)}</div>
         </div>
       )}
     </div>
