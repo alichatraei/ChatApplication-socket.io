@@ -10,7 +10,7 @@ const Chat = ({ location }) => {
   const [room, setRoom] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const _ENDPOINT = "https://chating-app-socket-io.herokuapp.com/";
+  const _ENDPOINT = "http://192.168.1.34:5000/";
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
     socket = io(_ENDPOINT);
